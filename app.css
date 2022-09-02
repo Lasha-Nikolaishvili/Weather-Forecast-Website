@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    font-size: 20px;
+}
+
+#nav {
+    display: flex;
+    align-items: stretch;
+    background-color: gray;
+    margin: 0;
+}
+
+.navLink {
+    text-decoration: none;
+    padding: 1em;
+    color: azure;
+}
+
+.navLink:nth-of-type(1) {
+    width: 1.5em;
+}
+
+.navLink:hover {
+    background-color: aqua;
+}
+
+footer {
+    background-color: gray;
+}
+
+.footerLink {
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+}
+
+.footerLink:hover {
+    text-decoration: underline black;
+}
