@@ -1,27 +1,58 @@
 body {
     margin: 0;
-    font-size: 20px;
+    font-size: 17px;
 }
 
 #nav {
     display: flex;
     align-items: stretch;
-    background-color: gray;
+    background-color: rgba(128, 128, 128, 0.6);
     margin: 0;
 }
 
 .navLink {
     text-decoration: none;
-    padding: 1em;
+    padding: 0.7em;
     color: azure;
 }
 
-.navLink:nth-of-type(1) {
+.navLinks {
+    display: flex;
+}
+
+.logo {
     width: 1.5em;
 }
 
 .navLink:hover {
     background-color: aqua;
+    transition: .5s;
+}
+
+.toggleButton {
+    display: none;
+    position: absolute;
+    top: 0.45em;
+    right: 0.7em;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 1.5em;
+    height: 1.4em;
+    border-radius: 4px;
+    background-color: rgba(128, 128, 128);
+}
+
+.toggleLine {
+    align-self: center;
+    width: 75%;
+    height: 2.5px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.secOne,
+.secTwo {
+    padding-top: 1em;
 }
 
 footer {
@@ -37,4 +68,35 @@ footer {
 
 .footerLink:hover {
     text-decoration: underline black;
+}
+
+@media (max-width: 500px) {
+    .toggleButton {
+        display: flex;
+    }
+
+    .navLinks {
+        display: none;
+    }
+
+    #nav {
+        flex-direction: column;
+    }
+
+    .navLinks {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navLink {
+        padding: 0.5em;
+    }
+
+    .navLinks.active {
+        display: flex;
+    }
+
+    .toggleButton.pressed {
+        border: 2px solid black;
+    }
 }

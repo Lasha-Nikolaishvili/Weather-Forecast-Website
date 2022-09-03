@@ -13,16 +13,23 @@
     <header id="nav">
         <!-- Navbar -->
         <!-- Todays Forecast, 5-Day Forecast, Contact Us-->
-        <a class="navLink" href="#Home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+        <a class="navLink logo" href="#Home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                 <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                 <path
                     d="M0 336c0 79.5 64.5 144 144 144H512c70.7 0 128-57.3 128-128c0-61.9-44-113.6-102.4-125.4c4.1-10.7 6.4-22.4 6.4-34.6c0-53-43-96-96-96c-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32C167.6 32 96 103.6 96 192c0 2.7 .1 5.4 .2 8.1C40.2 219.8 0 273.2 0 336z" />
             </svg></a>
-        <a class="navLink" href="#TodaysForecast">TodaysForecast</a>
-        <a class="navLink" href="#5DayForecast">5-Day Forecast</a>
-        <a class="navLink" href="#Contact Us">Contact Us</a>
+        <div class="navLinks">
+            <a class="navLink" href="#TodaysForecast">TodaysForecast</a>
+            <a class="navLink" href="#5DayForecast">5-Day Forecast</a>
+            <a class="navLink" href="#Contact Us">Contact Us</a>
+        </div>
+        <a href="#" class="toggleButton">
+            <span class="toggleLine"></span>
+            <span class="toggleLine"></span>
+            <span class="toggleLine"></span>
+        </a>
     </header>
-    <section>
+    <section class="secOne">
         <!-- Todays Forecast -->
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla consequatur eos saepe officiis eveniet
         laboriosam, aut quibusdam, animi odio facere repellendus, adipisci eligendi harum perferendis autem. Voluptate
@@ -31,7 +38,8 @@
         et placeat voluptas necessitatibus sequi dicta reiciendis, ipsam consequatur consectetur vero vitae quibusdam
         provident?
     </section>
-    <section>
+    <hr>
+    <section class="secTwo">
         <!-- 5-Day Forecast -->
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam unde mollitia dolorum placeat exercitationem
         architecto optio consequuntur ipsam doloribus beatae praesentium, ex eos hic temporibus accusamus suscipit
@@ -86,6 +94,8 @@
         <a class="footerLink" href="#Instagram">Instagram</a>
         <!-- Contact Info Etc -->
     </footer>
+
+    <script src="app.js"></script>
 </body>
 
 </html>
