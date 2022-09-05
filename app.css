@@ -1,6 +1,11 @@
 body {
     margin: 0;
     font-size: 17px;
+    text-align: center;
+}
+
+footer {
+    text-align: left;
 }
 
 #nav {
@@ -29,6 +34,36 @@ body {
     transition: .5s;
 }
 
+.magniGlass {
+    width: 1.2em;
+    padding: 5px;
+}
+
+.searchInp {
+    background-color: gray;
+    border: none;
+    height: 2em;
+}
+
+.navSearchBar {
+    position: absolute;
+    right: 1em;
+    top: 0.4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchBar {
+    margin-top: 2em;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .toggleButton {
     display: none;
     position: absolute;
@@ -50,6 +85,34 @@ body {
     background-color: white;
 }
 
+.secOne {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todayPanel {
+    background-color: bisque;
+    width: 30em;
+    height: 20em;
+    display: grid;
+    grid-template-columns: 10em 20em;
+    grid-template-rows: 8em 12em;
+}
+
+.weatherInfo {
+    background-color: red;
+}
+
+.weatherMap {
+    background-color: green;
+}
+
+.cityMap {
+    background-color: blue;
+    grid-column: span 2;
+}
+
 .secOne,
 .secTwo {
     padding-top: 1em;
@@ -68,6 +131,18 @@ footer {
 
 .footerLink:hover {
     text-decoration: underline black;
+}
+
+@media (min-width: 650px) {
+    .searchBar {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    .navSearchBar {
+        display: none;
+    }
 }
 
 @media (max-width: 500px) {
