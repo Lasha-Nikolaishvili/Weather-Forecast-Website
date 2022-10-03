@@ -2,16 +2,17 @@ body {
     margin: 0;
     font-size: 17px;
     text-align: center;
+    background-color: #9AAEBB;
 }
 
-footer {
-    text-align: left;
+h1 {
+    color: #374955;
 }
 
 #nav {
     display: flex;
     align-items: stretch;
-    background-color: rgba(128, 128, 128, 0.6);
+    background-color: #374955;
     margin: 0;
 }
 
@@ -30,8 +31,24 @@ footer {
 }
 
 .navLink:hover {
-    background-color: aqua;
+    background-color: #9AAEBB;
+    color: #374955;
     transition: .5s;
+}
+
+.navLink.hover-effect {
+    background-color: #9AAEBB;
+    color: #374955;
+}
+
+.navLink.no-hover-effect {
+    background-color: #374955;
+    color: azure;
+}
+
+.navLink:active {
+    background-color: #16B8F3;
+    color: #374955;
 }
 
 .magniGlass {
@@ -40,12 +57,13 @@ footer {
 }
 
 .searchInp {
-    background-color: gray;
+    background-color: #9AAEBB;
+    color: #25333b;
     border: none;
     height: 2em;
 }
 
-.navSearchBar {
+.navSearchBarForm {
     position: absolute;
     right: 1em;
     top: 0.4em;
@@ -63,6 +81,11 @@ footer {
     justify-content: center;
 }
 
+.searchBar .searchInp {
+    background-color: #374955;
+    color: #16B8F3;
+}
+
 
 .toggleButton {
     display: none;
@@ -73,8 +96,12 @@ footer {
     justify-content: space-around;
     width: 1.5em;
     height: 1.4em;
-    border-radius: 4px;
-    background-color: rgba(128, 128, 128);
+    border-radius: .2em;
+    background-color: #9AAEBB;
+}
+
+.toggleButton:checked {
+    border: #bfd4e2;
 }
 
 .toggleLine {
@@ -82,57 +109,253 @@ footer {
     width: 75%;
     height: 2.5px;
     border-radius: 10px;
-    background-color: white;
+    background-color: #374955;
 }
 
 .secOne {
+    margin-bottom: 3em;
+}
+
+.secOne.shown {
+    display: block;
+}
+
+.secOne.hidden {
+    display: none;
+}
+
+.todayPanelContainer {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .todayPanel {
-    background-color: bisque;
-    width: 30em;
-    height: 20em;
+    width: 56em;
+    min-height: 30em;
+    max-height: 31em;
     display: grid;
-    grid-template-columns: 10em 20em;
-    grid-template-rows: 8em 12em;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 4fr 3fr 3fr;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 1em;
+    background-color: #bfd4e2;
+    padding: 2em;
+
 }
 
 .weatherInfo {
-    background-color: red;
-}
-
-.weatherMap {
-    background-color: green;
-}
-
-.cityMap {
-    background-color: blue;
+    padding: .5em;
     grid-column: span 2;
+    text-align: left;
+    color: #25333b;
 }
 
-.secOne,
+.mainInfo>:nth-child(2n) {
+    margin-top: 0;
+}
+
+.mainInfo>:nth-child(3) {
+    margin-bottom: 0;
+}
+
+.additionalInfo {
+    display: inline-block;
+    border-left: 2px solid #374955;
+    padding-left: 0.7em;
+    margin-top: 0;
+    list-style-type: none;
+}
+
+.weatherIcon {
+    grid-column: span 2;
+    /* flex-shrink: 2; */
+    max-width: 400px;
+    max-height: 400px;
+    justify-self: center;
+}
+
+.iconDescription {
+    color: #25333b;
+}
+
+.cityImgDiv {
+    grid-column: span 4;
+    grid-row: span 2;
+}
+
+.cityImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .secTwo {
-    padding-top: 1em;
+    display: none;
+    margin-bottom: 3em;
+}
+
+.secTwo.shown {
+    display: block;
+}
+
+.secTwo.hidden {
+    display: none;
+}
+
+.panelBtn {
+    background-color: #374955;
+    color: #bfd4e2;
+    cursor: pointer;
+    border: none;
+    border-radius: .8em;
+    width: 6.5em;
+    height: 3em;
+}
+
+
+.panelBtnsDiv {
+    display: flex;
+    justify-content: center;
+    margin: 0 5em 1em;
+}
+
+.panelBtn:hover {
+    background-color: #9AAEBB;
+    color: #374955;
+    transition: .5s;
+}
+
+.panelBtn:active {
+    background-color: #16B8F3;
+    color: #374955;
+}
+
+
+.fiveDayPanel {
+    display: flex;
+    justify-content: center;
+}
+
+.panel {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 58em;
+    min-height: 10em;
+    background-color: #374955;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: .5em;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+.oneEigth {
+    min-height: 8em;
+    max-height: 10em;
+
+    border-radius: 1em;
+    background-color: #bfd4e2;
+    color: #25333b;
+    padding: .5em 0;
+}
+
+.oneEigth:hover {
+    background-color: #d8e2e9;
+}
+
+.secondPanel,
+.thirdPanel,
+.fourthPanel,
+.fifthPanel {
+    display: none;
+}
+
+.firstPanel.selected,
+.secondPanel.selected,
+.thirdPanel.selected,
+.fourthPanel.selected,
+.fifthPanel.selected {
+    display: grid;
+}
+
+.firstPanel.unselected,
+.secondPanel.unselected,
+.thirdPanel.unselected,
+.fourthPanel.unselected,
+.fifthPanel.unselected {
+    display: none;
+}
+
+.timeSpan {
+    display: block;
 }
 
 footer {
-    background-color: gray;
+    background-color: #374955;
+    color: #16B8F3;
+    font-size: 1em;
+    padding: 2em 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    min-height: max-content;
 }
 
 .footerLink {
-    color: black;
+    color: #9AAEBB;
     text-decoration: none;
     display: block;
     padding: 1em;
 }
 
 .footerLink:hover {
-    text-decoration: underline black;
+    text-decoration: underline #9AAEBB;
 }
 
+.footerLink:active {
+    color: #16B8F3;
+    text-decoration: underline #16B8F3;
+}
+
+.footer-div {
+    display: flex;
+}
+
+.footer-div .footer-div-p {
+    font-size: 1.2em;
+}
+
+.footer-div-ul {
+    display: inline-block;
+    list-style-type: none;
+    text-align: left;
+}
+
+.footer-div-p {
+    display: inline-block;
+}
+
+/* 5 Day Forecast grid ctrl */
+@media (max-width: 975px) {
+    .panel {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .panel {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 350px) {
+    .panel {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Todays Forecast grid ctrl */
 @media (min-width: 650px) {
     .searchBar {
         display: none;
@@ -140,12 +363,26 @@ footer {
 }
 
 @media (max-width: 650px) {
-    .navSearchBar {
+    .navSearchBarForm {
         display: none;
     }
 }
 
 @media (max-width: 500px) {
+    .weatherInfo {
+        grid-column: span 4;
+        text-align: center;
+    }
+
+    .weatherIcon {
+        grid-column: span 4;
+        grid-row: span 2;
+    }
+
+    .cityImg {
+        display: none;
+    }
+
     .toggleButton {
         display: flex;
     }

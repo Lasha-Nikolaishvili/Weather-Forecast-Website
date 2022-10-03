@@ -6,13 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Forecast</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
     <link rel="stylesheet" href="app.css">
 </head>
 
 <body>
     <header id="nav">
-        <!-- Navbar -->
-        <!-- Todays Forecast, 5-Day Forecast, Contact Us-->
         <a class="navLink logo" href="#Home">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                 <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -22,21 +25,21 @@
         <div class="navLinks">
             <a class="navLink" href="#TodaysForecast">TodaysForecast</a>
             <a class="navLink" href="#5DayForecast">5-Day Forecast</a>
-            <a class="navLink" href="#Contact Us">Contact Us</a>
+            <a class="navLink" href="#Info">Info</a>
         </div>
         <a href="#" class="toggleButton">
             <span class="toggleLine"></span>
             <span class="toggleLine"></span>
             <span class="toggleLine"></span>
         </a>
-        <form class="navSearchBar">
+        <form class="navSearchBarForm">
             <label for="navSearchBar">
                 <svg class="magniGlass" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                     <path
                         d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z" />
                 </svg></label>
-            <input class="searchInp" type="text" placeholder="City name" id="navSearchBar" name="city">
+            <input class="searchInp" type="text" placeholder="Enter City Name" id="navSearchBar" name="city">
         </form>
     </header>
     <form class="searchBar">
@@ -45,35 +48,215 @@
                 <path
                     d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z" />
             </svg></label>
-        <input class="searchInp" type="text" placeholder="City name" id="searchBar" name="city">
+        <input class="searchInp" type="text" placeholder="Enter City Name" id="searchBar" name="city">
     </form>
     <section class="secOne">
-        <!-- Todays Forecast -->
-        <div class="todayPanel">
-            <div class="weatherInfo"></div>
-            <div class="weatherMap"></div>
-            <div class="cityMap"></div>
+        <h1>Todays Forecast</h1>
+        <div class="todayPanelContainer">
+            <div class="todayPanel">
+                <div class="weatherInfo">
+                    <div class="mainInfo">
+                        <span class="dateAndTimeSpan">Last Updated:</span>
+                        <h2><span class="name">City</span>, <span class="country">Country</span></h2>
+                        <h2><span class="temp">Temperature</span>°C</h2>
+                        <p><b>Feels like <span class="feelsLike">Temperature</span>°C. <span
+                                    class="description"></span></b>
+                        </p>
+                    </div>
+                    <ul class="additionalInfo">
+                        <li><b>Wind Speed:</b> <span class="windSpeed"></span>m/s <b>Pressure:</b> <span
+                                class="pressure"></span>hPa</li>
+                        <li><b>Humidity:</b> <span class="humidity"></span>% <b>Sunrise:</b> <span
+                                class="sunrise"></span>
+                        </li>
+                        <li><b>Visibility:</b> <span class="visibility"></span>m <b>Sunset:</b> <span
+                                class="sunset"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="weatherIcon">
+                    <img class="icon" src="http://openweathermap.org/img/wn/10d@4x.png" alt=""><br>
+                    <span class="iconDescription"></span>
+                </div>
+                <div class="cityImgDiv">
+                    <img class="cityImg" src="" alt="">
+                </div>
+            </div>
         </div>
     </section>
-    <hr>
     <section class="secTwo">
-        <!-- 5-Day Forecast -->
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam unde mollitia dolorum placeat exercitationem
-        architecto optio consequuntur ipsam doloribus beatae praesentium, ex eos hic temporibus accusamus suscipit
-        voluptatem aut inventore?
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse eaque adipisci eos ullam quo accusamus architecto
-        minima expedita ipsa eligendi alias non iusto aut, deserunt a. Inventore commodi deleniti distinctio.
-
+        <h1>5 Day Forecast</h1>
+        <div class="panelBtnsDiv">
+            <button class="panelBtn firstPanelBtn">Day 1</button><button class="panelBtn secondPanelBtn">Day
+                2</button><button class="panelBtn thirdPanelBtn">Day 3</button><button
+                class="panelBtn fourthPanelBtn">Day
+                4</button><button class="panelBtn fifthPanelBtn">Day 5</button>
+        </div>
+        <div class="fiveDayPanel">
+            <div class="panel firstPanel">
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+            </div>
+            <div class="panel secondPanel">
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+            </div>
+            <div class="panel thirdPanel">
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+            </div>
+            <div class="panel fourthPanel">
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+            </div>
+            <div class="panel fifthPanel">
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
+                    <h3 class="temph3"></h3>
+                </div>
+            </div>
+        </div>
     </section>
-    <footer>
-        <hr>
-        <a class="footerLink" href="https://github.com/Lasha-Nikolaishvili">Github</a>
-        <a class="footerLink" href="#Gmail">Gmail</a>
-        <a class="footerLink" href="https://www.facebook.com/lasha.nikolaishvili.1/">Facebook</a>
-        <a class="footerLink" href="#Instagram">Instagram</a>
-        <!-- Contact Info Etc -->
+    <footer id="Info">
+        <!-- <hr> -->
+        <div class="footer-div">
+            <p class="footer-div-p"><b>Technologies:</b></p>
+            <ul class="footer-div-ul" id="technologies">
+                <li><a class="footerLink" href="https://openweathermap.org/current" target="_blank"
+                        rel="noopener noreferrer">Current Weather
+                        API</a></li>
+                <li><a class="footerLink" href="https://openweathermap.org/forecast5" target="_blank"
+                        rel="noopener noreferrer">Five Day Weather
+                        API</a></li>
+                <li><a class="footerLink" href="https://openweathermap.org/api/geocoding-api" target="_blank"
+                        rel="noopener noreferrer">Geocoding
+                        API</a></li>
+                <li><a class="footerLink" href="https://developers.teleport.org/api/getting_started/#photos_ua"
+                        target="_blank" rel="noopener noreferrer">Picture
+                        API</a></li>
+            </ul>
+        </div>
+        <div class="footer-div">
+            <p class="footer-div-p"><b>Contact:</b></p>
+            <ul class="footer-div-ul" id="contact-info">
+                <li><a class="footerLink" href="https://github.com/Lasha-Nikolaishvili" target="_blank"
+                        rel="noopener noreferrer">Github</a></li>
+                <li><a class="footerLink" href="#Gmail" target="_blank" rel="noopener noreferrer">Gmail</a></li>
+                <li><a class="footerLink" href="https://www.facebook.com/lasha.nikolaishvili.1/" target="_blank"
+                        rel="noopener noreferrer">Facebook</a></li>
+                <li><a class="footerLink" href="#Instagram" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            </ul>
+        </div>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="app.js"></script>
 </body>
 
