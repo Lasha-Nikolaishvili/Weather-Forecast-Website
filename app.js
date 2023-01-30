@@ -39,6 +39,10 @@ let responceObj;
 //Section Two
 const secTwo = document.querySelector('.secTwo');
 const panelBtns = document.querySelectorAll('.panelBtn');
+
+const tabs = document.querySelectorAll('[data-tab-target]');
+const tabContents = document.querySelectorAll('[data-tab-content]')
+
 const panels = document.querySelectorAll('.panel');
 const timeSpans = document.querySelectorAll('.timeSpan');
 const smallIconImgs = document.querySelectorAll('.smallIcon');
@@ -223,6 +227,8 @@ toggleButton.addEventListener('click', () => {
     toggleButton.classList.toggle('pressed');
 })
 
+
+
 navLinkAnchors[0].addEventListener('click', () => {
     secOne.classList.remove('shown', 'hidden');
     navLinkAnchors[0].classList.remove('no-hover-effect');
@@ -268,6 +274,15 @@ navLinkAnchors[3].addEventListener('click', () => {
     navLinkAnchors[3].classList.add('hover-effect');
 })
 
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const target = document.querySelector(tab.dataset.tabTarget)
+        tabContents.forEach(tabContent => {
+            tabContent.classList.remove('activeTab');
+        })
+        target.classList.add('.activeTab');
+    })
+})
 
 panelBtns[0].addEventListener('click', () => {
     panels[0].classList.remove('selected', 'unselected');

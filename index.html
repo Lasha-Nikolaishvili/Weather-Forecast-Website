@@ -6,12 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Forecast</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-
     <link rel="stylesheet" href="app.css">
+    <link rel="icon" type="image/x-icon" href="./Imgs/Favicons/cloudyIcon.ico"/>
 </head>
 
 <body>
@@ -87,13 +83,14 @@
     <section class="secTwo">
         <h1>5 Day Forecast</h1>
         <div class="panelBtnsDiv">
-            <button class="panelBtn firstPanelBtn">Day 1</button><button class="panelBtn secondPanelBtn">Day
-                2</button><button class="panelBtn thirdPanelBtn">Day 3</button><button
-                class="panelBtn fourthPanelBtn">Day
-                4</button><button class="panelBtn fifthPanelBtn">Day 5</button>
+            <button data-tab-target="#firstPanel" class="panelBtn firstPanelBtn">Day 1</button>
+            <button data-tab-target="#secondPanel" class="panelBtn secondPanelBtn">Day 2</button>
+            <button data-tab-target="#thirdPanel" class="panelBtn thirdPanelBtn">Day 3</button>
+            <button data-tab-target="#fourthPanel" class="panelBtn fourthPanelBtn">Day 4</button>
+            <button data-tab-target="#fifthPanel" class="panelBtn fifthPanelBtn">Day 5</button>
         </div>
         <div class="fiveDayPanel">
-            <div class="panel firstPanel">
+            <div id="#firstPanel" class="panel firstPanel" data-tab-content>
                 <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
                     <h3 class="temph3"></h3>
                 </div>
@@ -119,7 +116,7 @@
                     <h3 class="temph3"></h3>
                 </div>
             </div>
-            <div class="panel secondPanel">
+            <div id="#secondPanel" class="panel secondPanel" data-tab-content>
                 <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
                     <h3 class="temph3"></h3>
                 </div>
@@ -145,7 +142,7 @@
                     <h3 class="temph3"></h3>
                 </div>
             </div>
-            <div class="panel thirdPanel">
+            <div id="#thirdPanel" class="panel thirdPanel" data-tab-content>
                 <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
                     <h3 class="temph3"></h3>
                 </div>
@@ -171,7 +168,7 @@
                     <h3 class="temph3"></h3>
                 </div>
             </div>
-            <div class="panel fourthPanel">
+            <div id="#fourthPanel" class="panel fourthPanel" data-tab-content>
                 <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
                     <h3 class="temph3"></h3>
                 </div>
@@ -197,7 +194,7 @@
                     <h3 class="temph3"></h3>
                 </div>
             </div>
-            <div class="panel fifthPanel">
+            <div id="#fifthPanel" class="panel fifthPanel" data-tab-content>
                 <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
                     <h3 class="temph3"></h3>
                 </div>
