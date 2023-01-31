@@ -142,7 +142,7 @@ h1 {
     border-radius: 1em;
     background-color: #bfd4e2;
     padding: 2em;
-
+    margin: 0px 10px;
 }
 
 .weatherInfo {
@@ -170,7 +170,6 @@ h1 {
 
 .weatherIcon {
     grid-column: span 2;
-    /* flex-shrink: 2; */
     max-width: 400px;
     max-height: 400px;
     justify-self: center;
@@ -204,21 +203,42 @@ h1 {
     display: none;
 }
 
-.panelBtn {
+.selectPanelBtn {
+    display: none;
     background-color: #374955;
     color: #bfd4e2;
     cursor: pointer;
     border: none;
     border-radius: .8em;
+    /* width: 8em; */
+    height: 4em;
+    margin: 1em 0;
+}
+
+.panelBtn {
+    background-color: #374955;
+    color: #bfd4e2;
+    cursor: pointer;
+    border: none;
     width: 6.5em;
     height: 3em;
 }
 
+.firstPanelBtn {
+    border-top-left-radius: .8em;
+    border-bottom-left-radius: .8em;
+}
+
+.panelBtn:last-of-type {
+    border-top-right-radius: .8em;
+    border-bottom-right-radius: .8em;
+}
 
 .panelBtnsDiv {
     display: flex;
     justify-content: center;
-    margin: 0 5em 1em;
+    margin: 2em auto;
+    padding: 0px 10px;
 }
 
 .panelBtn:hover {
@@ -248,6 +268,7 @@ h1 {
     gap: .5em;
     padding: 1em;
     border-radius: 1em;
+    margin: 0px 10px;
 }
 
 .oneEigth {
@@ -352,6 +373,38 @@ footer {
 @media (max-width: 350px) {
     .panel {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Weekday Buttons media */
+@media (max-width: 350px) {
+    .panelBtn {
+        display: none;
+    }
+
+    .panelBtn.active {
+        display: block;
+        width: 100%;
+    }
+
+    .firstPanelBtn {
+        border-top-left-radius: .8em;
+        border-top-right-radius: .8em;
+        border-bottom-left-radius: 0;
+    }
+
+    .panelBtn.active:last-of-type {
+        border-top-right-radius:0;
+        border-bottom-left-radius: .8em;
+    }
+
+    .panelBtnsDiv.active {
+        flex-direction: column;
+    }
+
+    .selectPanelBtn {
+        display: block;
+        width: 100%;
     }
 }
 

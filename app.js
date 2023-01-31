@@ -38,6 +38,8 @@ let responceObj;
 
 //Section Two
 const secTwo = document.querySelector('.secTwo');
+const selectPanelBtn = document.querySelector('.selectPanelBtn');
+const panelBtnsDiv = document.querySelector('.panelBtnsDiv');
 const panelBtns = document.querySelectorAll('.panelBtn');
 
 const tabs = document.querySelectorAll('[data-tab-target]');
@@ -172,7 +174,6 @@ async function getAndSetCurrWeatherInfo(usedSearchBar) {
     setWeekDays(unixTimeUTC);
 }
 
-
 async function getAndSetFiveDaysWeatherInfo(usedSearchBar) {
     let cityName;
     if (usedSearchBar === 'navSearchBarForm' && navSearchBarForm.elements.city.value !== '') cityName = navSearchBarForm.elements.city.value;
@@ -227,8 +228,6 @@ toggleButton.addEventListener('click', () => {
     toggleButton.classList.toggle('pressed');
 })
 
-
-
 navLinkAnchors[0].addEventListener('click', () => {
     secOne.classList.remove('shown', 'hidden');
     navLinkAnchors[0].classList.remove('no-hover-effect');
@@ -274,13 +273,20 @@ navLinkAnchors[3].addEventListener('click', () => {
     navLinkAnchors[3].classList.add('hover-effect');
 })
 
-tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        const target = document.querySelector(tab.dataset.tabTarget)
-        tabContents.forEach(tabContent => {
-            tabContent.classList.remove('activeTab');
-        })
-        target.classList.add('.activeTab');
+// tabs.forEach(tab => {
+//     tab.addEventListener('click', () => {
+//         const target = document.querySelector(tab.dataset.tabTarget)
+//         tabContents.forEach(tabContent => {
+//             tabContent.classList.remove('activeTab');
+//         })
+//         target.classList.add('.activeTab');
+//     })
+// })
+
+selectPanelBtn.addEventListener('click', () => {
+    panelBtnsDiv.classList.toggle('active');
+    panelBtns.forEach(panelBtn => {
+        panelBtn.classList.toggle('active');
     })
 })
 
@@ -333,4 +339,3 @@ panelBtns[4].addEventListener('click', () => {
     panels[3].classList.add('unselected');
     panels[4].classList.add('selected');
 })
-
