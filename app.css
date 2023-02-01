@@ -1,5 +1,7 @@
 body {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-size: 17px;
     text-align: center;
     background-color: #9AAEBB;
@@ -329,15 +331,15 @@ footer {
     padding: 2em 0;
     display: flex;
     justify-content: space-evenly;
-    flex-wrap: wrap;
-    min-height: max-content;
+    /* flex-wrap: wrap; */
+    text-align: left;
 }
 
 .footerLink {
     color: #9AAEBB;
     text-decoration: none;
     display: block;
-    padding: 1em;
+    padding: .5em .5em .5em 0;
 }
 
 .footerLink:hover {
@@ -351,6 +353,7 @@ footer {
 
 .footer-div {
     display: flex;
+    flex-direction: column;
 }
 
 .footer-div .footer-div-p {
@@ -358,13 +361,10 @@ footer {
 }
 
 .footer-div-ul {
-    display: inline-block;
     list-style-type: none;
-    text-align: left;
-}
-
-.footer-div-p {
-    display: inline-block;
+    /* text-align: left; */
+    padding: 0;
+    margin-top: 0;
 }
 
 /* 5 Day Forecast grid ctrl */
@@ -415,6 +415,11 @@ footer {
     .selectPanelBtn {
         display: block;
         width: 100%;
+    }
+
+    footer {
+        text-align: center;
+        flex-direction: column;
     }
 }
 
