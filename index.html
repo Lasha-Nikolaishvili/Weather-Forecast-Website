@@ -6,25 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Forecast</title>
-    <link rel="stylesheet" href="app.css">
     <link rel="icon" type="image/x-icon" href="./Imgs/Favicons/cloudyIcon.ico"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="./Styles/app.css"> -->
+    <link rel="stylesheet" href="./Styles/todaysForecast.css">
+    <link rel="stylesheet" href="./Styles/nav.css">
+    <link rel="stylesheet" href="./Styles/footer.css">
 </head>
 
 <body>
     <header id="nav">
-        <a class="navLink logo" href="#Home">
+        <a class="navLink logo" href="./index.html">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                 <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                 <path
                     d="M0 336c0 79.5 64.5 144 144 144H512c70.7 0 128-57.3 128-128c0-61.9-44-113.6-102.4-125.4c4.1-10.7 6.4-22.4 6.4-34.6c0-53-43-96-96-96c-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32C167.6 32 96 103.6 96 192c0 2.7 .1 5.4 .2 8.1C40.2 219.8 0 273.2 0 336z" />
             </svg></a>
         <div class="navLinks">
-            <a class="navLink" href="#TodaysForecast">TodaysForecast</a>
-            <a class="navLink" href="#5DayForecast">5-Day Forecast</a>
-            <a class="navLink" href="#Info">Info</a>
+            <a class="navLink" href="./index.html">TodaysForecast</a>
+            <a class="navLink" href="./fiveDayForecast.html">5-Day Forecast</a>
         </div>
         <a href="#" class="toggleButton">
             <span class="toggleLine"></span>
@@ -87,150 +89,7 @@
             </div>
         </div>
     </section>
-    <section class="secTwo">
-        <h1>5 Day Forecast</h1>
-        <div class="panelBtnsDiv">
-            <button class="selectPanelBtn">Select a Day</button>
-            <button data-tab-target="#firstPanel" class="panelBtn firstPanelBtn">Day 1</button>
-            <button data-tab-target="#secondPanel" class="panelBtn secondPanelBtn">Day 2</button>
-            <button data-tab-target="#thirdPanel" class="panelBtn thirdPanelBtn">Day 3</button>
-            <button data-tab-target="#fourthPanel" class="panelBtn fourthPanelBtn">Day 4</button>
-            <button data-tab-target="#fifthPanel" class="panelBtn fifthPanelBtn">Day 5</button>
-        </div>
-        <div class="fiveDayPanel">
-            <div id="#firstPanel" class="panel firstPanel" data-tab-content>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-            </div>
-            <div id="#secondPanel" class="panel secondPanel" data-tab-content>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-            </div>
-            <div id="#thirdPanel" class="panel thirdPanel" data-tab-content>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-            </div>
-            <div id="#fourthPanel" class="panel fourthPanel" data-tab-content>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-            </div>
-            <div id="#fifthPanel" class="panel fifthPanel" data-tab-content>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-                <div class="oneEigth"> <span class="timeSpan"></span> <img class="smallIcon" title="">
-                    <h3 class="temph3"></h3>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer id="Info">
+    <footer>
         <div class="footer-div">
             <p class="footer-div-p"><strong>Technologies:</strong></p>
             <ul class="footer-div-ul" id="technologies">
@@ -261,7 +120,7 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="app.js"></script>
+    <script src="./Scripts/app.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,187 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 17px;
+    text-align: center;
+    background-color: #9AAEBB;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h1 {
+    color: #374955;
+    font-size: 2.5em;
+}
+
+.secTwo {
+    display: block;
+    margin-bottom: 3em;
+}
+
+.selectPanelBtn {
+    display: none;
+    background-color: #374955;
+    color: #bfd4e2;
+    cursor: pointer;
+    border: none;
+    border-radius: .8em;
+    height: 4em;
+    margin: 1em 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.panelBtn {
+    background-color: #374955;
+    color: #bfd4e2;
+    cursor: pointer;
+    border: none;
+    width: 6.5em;
+    height: 3em;
+    font-family: 'Ubuntu', sans-serif;
+    transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.firstPanelBtn {
+    border-top-left-radius: .8em;
+    border-bottom-left-radius: .8em;
+}
+
+.panelBtn:last-of-type {
+    border-top-right-radius: .8em;
+    border-bottom-right-radius: .8em;
+}
+
+.panelBtnsDiv {
+    display: flex;
+    justify-content: center;
+    margin: 2em auto;
+    padding: 0px 10px;
+}
+
+.selectPanelBtn:hover {
+    background-color: #9AAEBB;
+    color: #374955;
+    border: 2px solid #374955;
+}
+
+.panelBtn:hover,.selectPanelBtn:hover {
+    background-color: #9AAEBB;
+    color: #374955;
+}
+
+.panelBtn:active {
+    background-color: #16B8F3;
+    color: #374955;
+}
+
+.fiveDayPanel {
+    display: flex;
+    justify-content: center;
+}
+
+.panel {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 58em;
+    min-height: 10em;
+    background-color: #374955;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: .5em;
+    padding: 1em;
+    border-radius: 1em;
+    margin: 0px 10px;
+}
+
+.oneEigth {
+    min-height: 8em;
+    max-height: 10em;
+
+    border-radius: 1em;
+    background-color: #bfd4e2;
+    color: #25333b;
+    padding: .5em 0;
+    transition: .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.oneEigth:hover {
+    background-color: #d8e2e9;
+}
+
+.secondPanel,
+.thirdPanel,
+.fourthPanel,
+.fifthPanel {
+    display: none;
+}
+
+.firstPanel.selected,
+.secondPanel.selected,
+.thirdPanel.selected,
+.fourthPanel.selected,
+.fifthPanel.selected {
+    display: grid;
+}
+
+.firstPanel.unselected,
+.secondPanel.unselected,
+.thirdPanel.unselected,
+.fourthPanel.unselected,
+.fifthPanel.unselected {
+    display: none;
+}
+
+.timeSpan {
+    display: block;
+}
+
+/* 5 Day Forecast grid ctrl */
+@media (max-width: 975px) {
+    .panel {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .panel {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 350px) {
+    .panel {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Weekday Buttons media */
+@media (max-width: 350px) {
+    .panelBtn {
+        display: none;
+    }
+
+    .panelBtn.active {
+        display: block;
+        width: 100%;
+    }
+
+    .firstPanelBtn {
+        border-top-left-radius: .8em;
+        border-top-right-radius: .8em;
+        border-bottom-left-radius: 0;
+    }
+
+    .panelBtn.active:last-of-type {
+        border-top-right-radius:0;
+        border-bottom-left-radius: .8em;
+    }
+
+    .panelBtnsDiv.active {
+        flex-direction: column;
+    }
+
+    .selectPanelBtn {
+        display: block;
+        width: 100%;
+    }
+}

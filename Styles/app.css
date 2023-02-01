@@ -13,119 +13,8 @@ h1 {
     font-size: 2.5em;
 }
 
-#nav {
-    display: flex;
-    align-items: stretch;
-    background-color: #374955;
-    margin: 0;
-}
-
-.navLink {
-    text-decoration: none;
-    padding: 0.7em;
-    color: azure;
-}
-
-.navLinks {
-    display: flex;
-}
-
-.logo {
-    width: 1.5em;
-}
-
-.navLink:hover {
-    background-color: #9AAEBB;
-    color: #374955;
-    transition: .5s;
-}
-
-.navLink.hover-effect {
-    background-color: #9AAEBB;
-    color: #374955;
-}
-
-.navLink.no-hover-effect {
-    background-color: #374955;
-    color: azure;
-}
-
-.navLink:active {
-    background-color: #16B8F3;
-    color: #374955;
-}
-
-.magniGlass {
-    width: 1.2em;
-    padding: 5px;
-}
-
-.searchInp {
-    background-color: #9AAEBB;
-    color: #25333b;
-    border: none;
-    height: 2em;
-}
-
-.navSearchBarForm {
-    position: absolute;
-    right: 1em;
-    top: 0.4em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.searchBar {
-    margin-top: 2em;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.searchBar .searchInp {
-    background-color: #374955;
-    color: #16B8F3;
-}
-
-
-.toggleButton {
-    display: none;
-    position: absolute;
-    top: 0.45em;
-    right: 0.7em;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 1.5em;
-    height: 1.4em;
-    border-radius: .2em;
-    background-color: #9AAEBB;
-}
-
-.toggleButton:checked {
-    border: #bfd4e2;
-}
-
-.toggleLine {
-    align-self: center;
-    width: 75%;
-    height: 2.5px;
-    border-radius: 10px;
-    background-color: #374955;
-}
-
 .secOne {
     margin-bottom: 3em;
-}
-
-.secOne.shown {
-    display: block;
-}
-
-.secOne.hidden {
-    display: none;
 }
 
 .todayPanelContainer {
@@ -202,16 +91,8 @@ h1 {
 }
 
 .secTwo {
-    display: none;
-    margin-bottom: 3em;
-}
-
-.secTwo.shown {
     display: block;
-}
-
-.secTwo.hidden {
-    display: none;
+    margin-bottom: 3em;
 }
 
 .selectPanelBtn {
@@ -224,6 +105,7 @@ h1 {
     height: 4em;
     margin: 1em 0;
     font-family: 'Ubuntu', sans-serif;
+    transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .panelBtn {
@@ -234,6 +116,7 @@ h1 {
     width: 6.5em;
     height: 3em;
     font-family: 'Ubuntu', sans-serif;
+    transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .firstPanelBtn {
@@ -253,17 +136,21 @@ h1 {
     padding: 0px 10px;
 }
 
-.panelBtn:hover {
+.selectPanelBtn:hover {
     background-color: #9AAEBB;
     color: #374955;
-    transition: .5s;
+    border: 2px solid #374955;
+}
+
+.panelBtn:hover,.selectPanelBtn:hover {
+    background-color: #9AAEBB;
+    color: #374955;
 }
 
 .panelBtn:active {
     background-color: #16B8F3;
     color: #374955;
 }
-
 
 .fiveDayPanel {
     display: flex;
@@ -291,6 +178,7 @@ h1 {
     background-color: #bfd4e2;
     color: #25333b;
     padding: .5em 0;
+    transition: .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .oneEigth:hover {
@@ -322,49 +210,6 @@ h1 {
 
 .timeSpan {
     display: block;
-}
-
-footer {
-    background-color: #374955;
-    color: #16B8F3;
-    font-size: 1em;
-    padding: 2em 0;
-    display: flex;
-    justify-content: space-evenly;
-    /* flex-wrap: wrap; */
-    text-align: left;
-}
-
-.footerLink {
-    color: #9AAEBB;
-    text-decoration: none;
-    display: block;
-    padding: .5em .5em .5em 0;
-}
-
-.footerLink:hover {
-    text-decoration: underline #9AAEBB;
-}
-
-.footerLink:active {
-    color: #16B8F3;
-    text-decoration: underline #16B8F3;
-}
-
-.footer-div {
-    display: flex;
-    flex-direction: column;
-}
-
-.footer-div .footer-div-p {
-    font-size: 1.2em;
-}
-
-.footer-div-ul {
-    list-style-type: none;
-    /* text-align: left; */
-    padding: 0;
-    margin-top: 0;
 }
 
 /* 5 Day Forecast grid ctrl */
@@ -415,90 +260,5 @@ footer {
     .selectPanelBtn {
         display: block;
         width: 100%;
-    }
-
-    footer {
-        text-align: center;
-        flex-direction: column;
-    }
-}
-
-/* Todays Forecast grid ctrl */
-@media (max-width: 500px) {
-    .todayPanel {
-        grid-template-rows: 1fr;
-    }
-
-    .weatherIconInfo {
-        display: block;
-    }
-
-    .weatherIcon {
-        display: none;
-    }
-
-    .iconDescriptionInfo {
-        display: none;
-    }
-
-    .iconInfo {
-        width: 150px;
-    }
-}
-
-@media (min-width: 650px) {
-    .searchBar {
-        display: none;
-    }
-}
-
-@media (max-width: 650px) {
-    .navSearchBarForm {
-        display: none;
-    }
-}
-
-@media (max-width: 500px) {
-    .weatherInfo {
-        grid-column: span 4;
-        text-align: center;
-    }
-
-    .weatherIcon {
-        grid-column: span 4;
-        grid-row: span 2;
-    }
-
-    .cityImg {
-        display: none;
-    }
-
-    .toggleButton {
-        display: flex;
-    }
-
-    .navLinks {
-        display: none;
-    }
-
-    #nav {
-        flex-direction: column;
-    }
-
-    .navLinks {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .navLink {
-        padding: 0.5em;
-    }
-
-    .navLinks.active {
-        display: flex;
-    }
-
-    .toggleButton.pressed {
-        border: 2px solid black;
     }
 }
