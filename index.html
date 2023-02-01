@@ -8,6 +8,9 @@
     <title>Weather Forecast</title>
     <link rel="stylesheet" href="app.css">
     <link rel="icon" type="image/x-icon" href="./Imgs/Favicons/cloudyIcon.ico"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -53,7 +56,11 @@
                 <div class="weatherInfo">
                     <div class="mainInfo">
                         <span class="dateAndTimeSpan">Last Updated:</span>
-                        <h2><span class="name">City</span>, <span class="country">Country</span></h2>
+                        <h2 class="cityHeader"><span class="name">City</span>, <span class="country">Country</span></h2>
+                        <div class="weatherIconInfo">
+                            <img class="iconInfo" src="http://openweathermap.org/img/wn/10d@4x.png" alt=""><br>
+                            <span class="iconDescriptionInfo"></span>
+                        </div>
                         <h2><span class="temp">Temperature</span>°C</h2>
                         <p><b>Feels like <span class="feelsLike">Temperature</span>°C. <span
                                     class="description"></span></b>
@@ -250,7 +257,7 @@
                 <li><a class="footerLink" href="#Gmail" target="_blank" rel="noopener noreferrer">Gmail</a></li>
                 <li><a class="footerLink" href="https://www.facebook.com/lasha.nikolaishvili.1/" target="_blank"
                         rel="noopener noreferrer">Facebook</a></li>
-                <li><a class="footerLink" href="#Instagram" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                <li><a class="footerLink" href="https://www.instagram.com/lasha2314/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
             </ul>
         </div>
     </footer>

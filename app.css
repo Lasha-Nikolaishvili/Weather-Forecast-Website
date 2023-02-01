@@ -3,10 +3,12 @@ body {
     font-size: 17px;
     text-align: center;
     background-color: #9AAEBB;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 h1 {
     color: #374955;
+    font-size: 2.5em;
 }
 
 #nav {
@@ -132,8 +134,6 @@ h1 {
 
 .todayPanel {
     width: 56em;
-    min-height: 30em;
-    max-height: 31em;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 4fr 3fr 3fr;
@@ -143,6 +143,14 @@ h1 {
     background-color: #bfd4e2;
     padding: 2em;
     margin: 0px 10px;
+}
+
+.temp {
+    font-size: 2em;
+}
+
+.cityHeader {
+    margin: 0;
 }
 
 .weatherInfo {
@@ -170,9 +178,10 @@ h1 {
 
 .weatherIcon {
     grid-column: span 2;
-    max-width: 400px;
-    max-height: 400px;
-    justify-self: center;
+}
+
+.weatherIconInfo {
+    display: none;
 }
 
 .iconDescription {
@@ -210,9 +219,9 @@ h1 {
     cursor: pointer;
     border: none;
     border-radius: .8em;
-    /* width: 8em; */
     height: 4em;
     margin: 1em 0;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .panelBtn {
@@ -222,6 +231,7 @@ h1 {
     border: none;
     width: 6.5em;
     height: 3em;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .firstPanelBtn {
@@ -409,6 +419,28 @@ footer {
 }
 
 /* Todays Forecast grid ctrl */
+@media (max-width: 500px) {
+    .todayPanel {
+        grid-template-rows: 1fr;
+    }
+
+    .weatherIconInfo {
+        display: block;
+    }
+
+    .weatherIcon {
+        display: none;
+    }
+
+    .iconDescriptionInfo {
+        display: none;
+    }
+
+    .iconInfo {
+        width: 150px;
+    }
+}
+
 @media (min-width: 650px) {
     .searchBar {
         display: none;
