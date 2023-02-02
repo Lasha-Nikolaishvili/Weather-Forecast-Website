@@ -21,6 +21,10 @@ h1 {
     font-size: 2.5em;
 }
 
+.cityHeader {
+    color: #25333b;
+}
+
 .secTwo {
     display: block;
     margin-bottom: 3em;

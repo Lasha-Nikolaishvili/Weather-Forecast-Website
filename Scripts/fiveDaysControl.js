@@ -8,6 +8,9 @@ const navSearchBarInp = document.querySelector('#navSearchBar');
 const searchBar = document.querySelector('.searchBar');
 const searchBarInp = document.querySelector('#searchBar');
 
+const nameSpan = document.querySelector('.name');
+const countrySpan = document.querySelector('.country');
+
 const WeatherAPIkey = '7f05e495c1f55495ab79b16aaf8992ed';
 const limit = 1;
 let lat, lon;
@@ -118,7 +121,10 @@ async function updateCurrWeatherInfo(usedSearchBar) {
     else cityName = 'tbilisi';
     await getAndSetLatLon(capitalizeFirstLetter(cityName), usedSearchBar);
     responceObj = await fetchCurrWeather();
-    const { dt: unixTimeUTC } = responceObj;
+    // const { dt: unixTimeUTC } = responceObj;
+    const { dt: unixTimeUTC, sys: { country }} = responceObj;
+    nameSpan.innerText = capitalizeFirstLetter(cityName);
+    countrySpan.innerText = country;
 
     setWeekDays(unixTimeUTC);
 }
