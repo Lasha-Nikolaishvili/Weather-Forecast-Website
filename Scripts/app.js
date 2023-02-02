@@ -148,36 +148,3 @@ searchBar.addEventListener('submit', async function (e) {
 toggleButton.addEventListener('click', () => {
     navLinksDiv.classList.toggle('active');
 })
-
-navLinkAnchors[0].addEventListener('click', () => {
-    secOne.classList.remove('shown', 'hidden');
-    navLinkAnchors[0].classList.remove('no-hover-effect');
-
-    secOne.classList.add('shown');
-    secTwo.classList.add('hidden');
-    navLinkAnchors[0].classList.add('hover-effect');
-    navLinkAnchors[1].classList.add('no-hover-effect');
-    navLinkAnchors[2].classList.add('no-hover-effect');
-})
-
-navLinkAnchors[1].addEventListener('click', () => {
-    secOne.classList.remove('shown', 'hidden');
-    navLinkAnchors[1].classList.remove('no-hover-effect');
-
-    secOne.classList.add('shown');
-    secTwo.classList.add('hidden');
-    navLinkAnchors[0].classList.add('no-hover-effect');
-    navLinkAnchors[1].classList.add('hover-effect');
-    navLinkAnchors[2].classList.add('no-hover-effect');
-})
-
-navLinkAnchors[2].addEventListener('click', () => {
-    secTwo.classList.remove('shown', 'hidden');
-    navLinkAnchors[2].classList.remove('no-hover-effect');
-
-    secOne.classList.add('hidden');
-    secTwo.classList.add('shown');
-    navLinkAnchors[0].classList.add('no-hover-effect');
-    navLinkAnchors[1].classList.add('no-hover-effect');
-    navLinkAnchors[2].classList.add('hover-effect');
-})
