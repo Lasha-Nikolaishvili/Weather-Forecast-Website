@@ -6,6 +6,14 @@ body {
     text-align: center;
     background-color: #9AAEBB;
     font-family: 'Ubuntu', sans-serif;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
 }
 
 h1 {

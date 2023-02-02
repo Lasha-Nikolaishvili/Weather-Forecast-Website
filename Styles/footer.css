@@ -6,6 +6,8 @@ footer {
     display: flex;
     justify-content: space-evenly;
     text-align: left;
+
+    flex-grow: 1;
 }
 
 .footerLink {
