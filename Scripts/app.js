@@ -31,7 +31,6 @@ const iconDesctiptionSpan = document.querySelector('.iconDescription');
 const cityImg = document.querySelector('.cityImg');
 
 const WeatherAPIkey = '7f05e495c1f55495ab79b16aaf8992ed';
-const GooglePlacesAPIkey = 'AIzaSyBRCWY8MnapiB8mVojIN5b32SRSjY0n4n0';
 const limit = 1;
 let lat, lon;
 let responceObj;
@@ -54,14 +53,10 @@ function getTimeAndDate(unixTimeUTC) {
     return `Last Updated: ${dateStr}, ${timeStr}`;
 }
 
-function formatForPhotoAPI(string) {
-    return string.toLowerCase().split(' ').join('-');
-}
-
 const getAndSetLatLon = async (cityName, usedSearchBar) => {
     if (usedSearchBar === 'navSearchBarForm' && navSearchBarForm.elements.city.value !== '') cityName = navSearchBarForm.elements.city.value;
     else if (usedSearchBar === 'searchBar' && searchBar.elements.city.value !== '') cityName = searchBar.elements.city.value;
-    else cityName = 'Tbilisi';
+    else cityName = 'paris';
     try {
         const res = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=${limit}&appid=${WeatherAPIkey}`);
         lat = res.data[0].lat;
@@ -80,28 +75,21 @@ const fetchCurrWeather = async () => {
     }
 }
 
-const fetchPhotoObject = async (cityName) => {
+const fetchRoadGoatData = async (textQuery) => {
     try {
-        const res = await axios.get(`https://api.teleport.org/api/urban_areas/slug:${cityName}/images/`);
+        const config = { headers: { Authorization: 'Basic YzAyMmEyZDg2NTlmOTE1NzU0YjM3ZTRkMzRiNWIwYjI6YmJmNDBiODdlZjJiN2YwNDZjNzVkOWI0MzkzYWM3MDQ='}};
+        const res = await axios.get(`https://api.roadgoat.com/api/v2/destinations/auto_complete?q=${textQuery}`, config);
         return res.data;
     } catch (e) {
-        console.log(`No City Photo Available!`, e);
-        cityImg.src = ''
+        console.log('Unable to attain unique Roadgoat city id', e);
     }
 }
-//AIzaSyAyT1s-XWaXkwHOampaY8iU-mDUwsMyRnE
 
-//API_KEY for Google Places:
-//AIzaSyBRCWY8MnapiB8mVojIN5b32SRSjY0n4n0
-//for reference
-//https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Chicago&key=AIzaSyBRCWY8MnapiB8mVojIN5b32SRSjY0n4n0&inputtype=textquery&fields=name,photos
-//for photo
-//
 async function updateCurrWeatherInfo(usedSearchBar) {
     let cityName;
     if (usedSearchBar === 'navSearchBarForm' && navSearchBarForm.elements.city.value !== '') cityName = navSearchBarForm.elements.city.value;
     else if (usedSearchBar === 'searchBar' && searchBar.elements.city.value !== '') cityName = searchBar.elements.city.value;
-    else cityName = 'tbilisi';
+    else cityName = 'paris';
     cityImg.alt = `An image of the city of ${capitalizeFirstLetter(cityName)}`;
     await getAndSetLatLon(capitalizeFirstLetter(cityName), usedSearchBar);
     responceObj = await fetchCurrWeather();
@@ -125,13 +113,37 @@ async function updateCurrWeatherInfo(usedSearchBar) {
     bigIconImg.alt = `Icon of ${main} weather`;
     iconDesctiptionSpan.innerText = `${main}`;
     
-    cityPhotoResObj = await fetchPhotoObject(formatForPhotoAPI(cityName));
-    const webCityPhotoUrl = cityPhotoResObj.photos[0].image.web;
-    // const mobileCityPhotoUrl = cityPhotoResObj.photos[0].image.mobile;
-    cityImg.src = webCityPhotoUrl;
+    let photoUrl;
+    const roadGoatData = await fetchRoadGoatData(cityName);
+    try {
+        photoUrl = roadGoatData.included[0].attributes.image.large;
+    } catch (e) {
+        photoUrl = 'Imgs/Others/imageNotFound.jpg';
+        console.log('Error displaying city photo', e);
+    }
+    const traits = document.querySelector('.traits');
+    traits.innerHTML = '';
+    for(let i=0; i<roadGoatData.included.length; i++) {
+        if(roadGoatData.included[i].type = 'known_for' && roadGoatData.included[i].attributes.name !== undefined) {
+            const trait = document.createElement('span');
+            const traitName = document.createElement('span');
+            const traitIcon = document.createElement('img');
+
+            traitName.innerHTML = roadGoatData.included[i].attributes.name;
+            traitIcon.src = roadGoatData.included[i].attributes.icon + '-48.png';
+            trait.classList.add('trait');
+            traitName.classList.add('traitName');
+            traitIcon.classList.add('traitIcon');
+
+            trait.append(traitName);
+            trait.append(traitIcon);
+            traits.append(trait);
+        }
+    }
+
+    cityImg.src = photoUrl;
 }
 
-// Start of execution:
 updateCurrWeatherInfo();
 
 //Event Listeners

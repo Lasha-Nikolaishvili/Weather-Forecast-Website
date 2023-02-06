@@ -62,10 +62,6 @@ function getTimeAndDate(unixTimeUTC) {
     return `Last Updated: ${dateStr}, ${timeStr}`;
 }
 
-function formatForPhotoAPI(string) {
-    return string.toLowerCase().split(' ').join('-');
-}
-
 const getAndSetLatLon = async (cityName, usedSearchBar) => {
     if (usedSearchBar === 'navSearchBarForm' && navSearchBarForm.elements.city.value !== '') cityName = navSearchBarForm.elements.city.value;
     else if (usedSearchBar === 'searchBar' && searchBar.elements.city.value !== '') cityName = searchBar.elements.city.value;
@@ -97,23 +93,6 @@ const fetchFiveDaysWeather = async () => {
     }
 }
 
-const fetchPhotoObject = async (cityName) => {
-    try {
-        const res = await axios.get(`https://api.teleport.org/api/urban_areas/slug:${cityName}/images/`);
-        return res.data;
-    } catch (e) {
-        console.log(`No City Photo Available!`, e);
-        cityImg.src = ''
-    }
-}
-//AIzaSyAyT1s-XWaXkwHOampaY8iU-mDUwsMyRnE
-
-//API_KEY for Google Places:
-//AIzaSyBRCWY8MnapiB8mVojIN5b32SRSjY0n4n0
-//for reference
-//https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Chicago&key=AIzaSyBRCWY8MnapiB8mVojIN5b32SRSjY0n4n0&inputtype=textquery&fields=name,photos
-//for photo
-//
 async function updateCurrWeatherInfo(usedSearchBar) {
     let cityName;
     if (usedSearchBar === 'navSearchBarForm' && navSearchBarForm.elements.city.value !== '') cityName = navSearchBarForm.elements.city.value;
@@ -121,7 +100,6 @@ async function updateCurrWeatherInfo(usedSearchBar) {
     else cityName = 'tbilisi';
     await getAndSetLatLon(capitalizeFirstLetter(cityName), usedSearchBar);
     responceObj = await fetchCurrWeather();
-    // const { dt: unixTimeUTC } = responceObj;
     const { dt: unixTimeUTC, sys: { country }} = responceObj;
     nameSpan.innerText = capitalizeFirstLetter(cityName);
     countrySpan.innerText = country;
@@ -158,7 +136,6 @@ async function updateFiveDaysWeatherInfo(usedSearchBar) {
     }
 }
 
-// Start of execution:
 updateCurrWeatherInfo();
 updateFiveDaysWeatherInfo();
 
