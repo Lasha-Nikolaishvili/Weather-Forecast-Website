@@ -62,6 +62,24 @@ function getTimeAndDate(unixTimeUTC) {
     return `Last Updated: ${dateStr}, ${timeStr}`;
 }
 
+function controlPanels() {
+    const controlSelection = (index) => {
+        panelBtns[index].addEventListener('click', () => {
+            panels[index].classList.remove('selected', 'unselected');
+            panels[index].classList.add('selected');
+
+            for(let i=0; i<panelBtns.length; i++) {
+                if(i !== index) {
+                    panels[i].classList.remove('selected', 'unselected');
+                    panels[i].classList.add('unselected');
+                }
+            }
+        })
+    }
+
+    for(let i=0; i<panelBtns.length; i++) controlSelection(i);
+}
+
 const getAndSetLatLon = async (cityName, usedSearchBar) => {
     if (usedSearchBar === 'navSearchBarForm' && navSearchBarForm.elements.city.value !== '') cityName = navSearchBarForm.elements.city.value;
     else if (usedSearchBar === 'searchBar' && searchBar.elements.city.value !== '') cityName = searchBar.elements.city.value;
@@ -136,6 +154,7 @@ async function updateFiveDaysWeatherInfo(usedSearchBar) {
     }
 }
 
+controlPanels();
 updateCurrWeatherInfo();
 updateFiveDaysWeatherInfo();
 
@@ -161,54 +180,4 @@ selectPanelBtn.addEventListener('click', () => {
     panelBtns.forEach(panelBtn => {
         panelBtn.classList.toggle('active');
     })
-})
-
-panelBtns[0].addEventListener('click', () => {
-    panels[0].classList.remove('selected', 'unselected');
-
-    panels[0].classList.add('selected');
-    panels[1].classList.add('unselected');
-    panels[2].classList.add('unselected');
-    panels[3].classList.add('unselected');
-    panels[4].classList.add('unselected');
-})
-
-panelBtns[1].addEventListener('click', () => {
-    panels[1].classList.remove('selected', 'unselected');
-
-    panels[0].classList.add('unselected');
-    panels[1].classList.add('selected');
-    panels[2].classList.add('unselected');
-    panels[3].classList.add('unselected');
-    panels[4].classList.add('unselected');
-})
-
-panelBtns[2].addEventListener('click', () => {
-    panels[2].classList.remove('selected', 'unselected');
-
-    panels[0].classList.add('unselected');
-    panels[1].classList.add('unselected');
-    panels[2].classList.add('selected');
-    panels[3].classList.add('unselected');
-    panels[4].classList.add('unselected');
-})
-
-panelBtns[3].addEventListener('click', () => {
-    panels[3].classList.remove('selected', 'unselected');
-
-    panels[0].classList.add('unselected');
-    panels[1].classList.add('unselected');
-    panels[2].classList.add('unselected');
-    panels[3].classList.add('selected');
-    panels[4].classList.add('unselected');
-})
-
-panelBtns[4].addEventListener('click', () => {
-    panels[4].classList.remove('selected', 'unselected');
-
-    panels[0].classList.add('unselected');
-    panels[1].classList.add('unselected');
-    panels[2].classList.add('unselected');
-    panels[3].classList.add('unselected');
-    panels[4].classList.add('selected');
 })
