@@ -65,7 +65,7 @@ function getTimeAndDate(unixTimeUTC) {
 const getAndSetLatLon = async (cityName, usedSearchBar) => {
     if (usedSearchBar === 'navSearchBarForm' && navSearchBarForm.elements.city.value !== '') cityName = navSearchBarForm.elements.city.value;
     else if (usedSearchBar === 'searchBar' && searchBar.elements.city.value !== '') cityName = searchBar.elements.city.value;
-    else cityName = 'Tbilisi';
+    else cityName = 'paris';
     try {
         const res = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=${limit}&appid=${WeatherAPIkey}`);
         lat = res.data[0].lat;
@@ -97,7 +97,7 @@ async function updateCurrWeatherInfo(usedSearchBar) {
     let cityName;
     if (usedSearchBar === 'navSearchBarForm' && navSearchBarForm.elements.city.value !== '') cityName = navSearchBarForm.elements.city.value;
     else if (usedSearchBar === 'searchBar' && searchBar.elements.city.value !== '') cityName = searchBar.elements.city.value;
-    else cityName = 'tbilisi';
+    else cityName = 'paris';
     await getAndSetLatLon(capitalizeFirstLetter(cityName), usedSearchBar);
     responceObj = await fetchCurrWeather();
     const { dt: unixTimeUTC, sys: { country }} = responceObj;
@@ -111,7 +111,7 @@ async function updateFiveDaysWeatherInfo(usedSearchBar) {
     let cityName;
     if (usedSearchBar === 'navSearchBarForm' && navSearchBarForm.elements.city.value !== '') cityName = navSearchBarForm.elements.city.value;
     else if (usedSearchBar === 'searchBar' && searchBar.elements.city.value !== '') cityName = searchBar.elements.city.value;
-    else cityName = 'tbilisi';
+    else cityName = 'paris';
     await getAndSetLatLon(capitalizeFirstLetter(cityName), usedSearchBar);
     responceObj = await fetchFiveDaysWeather();
     const { list } = responceObj;
