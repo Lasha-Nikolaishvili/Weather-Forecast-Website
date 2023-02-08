@@ -67,7 +67,7 @@ const getAndSetLatLon = async (cityName, usedSearchBar) => {
     else if (usedSearchBar === 'searchBar' && searchBar.elements.city.value !== '') cityName = searchBar.elements.city.value;
     else cityName = 'Tbilisi';
     try {
-        const res = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=${limit}&appid=${WeatherAPIkey}`);
+        const res = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=${limit}&appid=${WeatherAPIkey}`);
         lat = res.data[0].lat;
         lon = res.data[0].lon;
     } catch (e) {
@@ -130,7 +130,7 @@ async function updateFiveDaysWeatherInfo(usedSearchBar) {
 
     for (let i = 0; i < temps.length; i++) {
         timeSpans[i].innerText = hours[i];
-        smallIconImgs[i].src = `http://openweathermap.org/img/wn/${icons[i]}@2x.png`;
+        smallIconImgs[i].src = `https://openweathermap.org/img/wn/${icons[i]}@2x.png`;
         smallIconImgs[i].title = iconDescriptions[i];
         temph3s[i].innerText = `${temps[i]} °C`;
     }

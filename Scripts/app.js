@@ -58,7 +58,7 @@ const getAndSetLatLon = async (cityName, usedSearchBar) => {
     else if (usedSearchBar === 'searchBar' && searchBar.elements.city.value !== '') cityName = searchBar.elements.city.value;
     else cityName = 'paris';
     try {
-        const res = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=${limit}&appid=${WeatherAPIkey}`);
+        const res = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=${limit}&appid=${WeatherAPIkey}`);
         lat = res.data[0].lat;
         lon = res.data[0].lon;
     } catch (e) {
@@ -109,7 +109,7 @@ async function updateCurrWeatherInfo(usedSearchBar) {
     pressureSpan.innerText = pressure;
     sunriseSpan.innerText = getTime(sunrise);
     sunsetSpan.innerText = getTime(sunset);
-    bigIconImg.src = `http://openweathermap.org/img/wn/${icon}@4x.png`;
+    bigIconImg.src = `https://openweathermap.org/img/wn/${icon}@4x.png`;
     bigIconImg.alt = `Icon of ${main} weather`;
     iconDesctiptionSpan.innerText = `${main}`;
     
